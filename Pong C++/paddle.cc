@@ -26,7 +26,6 @@ void Paddle::update() {
     pos_y_ = 768 - height_;
   }
 
-  //Fix x to ???
-
-
+  //Fix x to desired X position
+  pos_x_ = desired_x_;
 }

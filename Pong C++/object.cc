@@ -15,7 +15,7 @@ Object::Object(){
   vel_x_ = 0.0f;
   vel_y_ = 0.0f;
 
-  enabled_ = -1;
+  enabled_ = true;
   
   collisionable_ = false;
 

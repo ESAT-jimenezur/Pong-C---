@@ -11,10 +11,10 @@ class Paddle : public Object{
 
 
 public:
-  Paddle();
-  ~Paddle();
 
-  void init();
+  float desired_x_;
+
+  void init(const char* sprite_name, float desired_x);
   void update();
 
 private:
