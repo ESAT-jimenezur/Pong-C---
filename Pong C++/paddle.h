@@ -14,6 +14,7 @@ public:
   Paddle();
   ~Paddle();
 
+  void init();
   void update();
 
 private:
