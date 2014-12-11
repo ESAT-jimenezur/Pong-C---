@@ -37,7 +37,6 @@ public:
 private:
   static int object_counter_;
   Object(const Object& other){}
-
 };
 
 #endif __OBJECT_H__

@@ -1,5 +1,4 @@
 
-
 #include "object.h"
 
 int Object::object_counter_ = 0;
@@ -37,7 +36,29 @@ void Object::init(const char* sprite_name){
   ++object_counter_;
 
   sprite_ = ESAT::SpriteFromFile(sprite_name);
-  width_ = ESAT::SpriteWidth(sprite_name);
-  height_ = ESAT::SpriteHeight(sprite_name);
+  width_ = ESAT::SpriteWidth(sprite_);
+  height_ = ESAT::SpriteHeight(sprite_);
 }
 
+void Object::update(){
+  //Move the object by its acceleration
+  if (enabled_){
+    pos_x_ += vel_x_;
+    pos_y_ += vel_y_;
+
+    vel_x_ += accel_x_;
+    vel_y_ += accel_y_;
+  }
+}
+
+void Object::draw(){
+  if (enabled_ && (sprite_ > 0)){
+    ESAT::DrawSprite(sprite_, pos_x_, pos_y_);
+  }
+}
+
+void Object::isColliding(const Object& other){
+  if (collisionable_ && other.collisionable_){
+
+  }
+}
