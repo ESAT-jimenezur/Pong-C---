@@ -37,8 +37,11 @@ public:
   bool isColliding(const Object& other);
 
 private:
-  static int object_counter_;
   Object(const Object& other){}
+
+protected:
+  static int object_counter_;
+
 };
 
 #endif __OBJECT_H__

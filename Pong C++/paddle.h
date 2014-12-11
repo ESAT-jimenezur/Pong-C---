@@ -4,7 +4,20 @@
 
 #include "object.h"
 
+const float kPaddleMaxVelocity = 0.005f;
+
 class Paddle : public Object{
+
+
+
+public:
+  Paddle();
+  ~Paddle();
+
+  void update();
+
+private:
+  
 
 };
 

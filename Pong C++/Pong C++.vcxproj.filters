@@ -18,12 +18,18 @@
     <ClInclude Include="object.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="paddle.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="object.cc">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="main.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="paddle.cc">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
