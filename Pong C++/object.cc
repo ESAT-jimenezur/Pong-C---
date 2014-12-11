@@ -57,8 +57,23 @@ void Object::draw(){
   }
 }
 
-void Object::isColliding(const Object& other){
-  if (collisionable_ && other.collisionable_){
+bool Object::isColliding(const Object& other){
+  if(collisionable_ && other.collisionable_){
 
+    if ((other.pos_x_ >= pos_x_) && (other.pos_x_ <= pos_x_ + width_)){
+      if ((other.pos_y_ >= pos_y_) && (other.pos_y_ <= pos_y_ + height_)){
+        return true;
+      }
+    }
+
+    if ((other.pos_x_ + other.width_ >= pos_x_) && (other.pos_x_ + other.width_ <= pos_x_ + width_)){
+      if ((other.pos_y_ + other.height_ >= pos_y_) && (other.pos_y_ + height_ <= pos_y_ + height_)){
+        return true;
+      }
+    }
+
+    return false;
+  
   }
+  return false;
 }

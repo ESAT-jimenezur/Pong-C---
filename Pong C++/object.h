@@ -34,6 +34,8 @@ public:
   void update();
   void draw();
 
+  bool isColliding(const Object& other);
+
 private:
   static int object_counter_;
   Object(const Object& other){}

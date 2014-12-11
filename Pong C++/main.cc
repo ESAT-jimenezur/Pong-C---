@@ -7,7 +7,7 @@
 
 int ESAT::main(int argc, char **argv) {
 
-  ESAT::WindowInit(640, 480);
+  ESAT::WindowInit(1024, 768);
 
   Object o;
   o.init("texture.png");
@@ -16,10 +16,6 @@ int ESAT::main(int argc, char **argv) {
 
   while (ESAT::WindowIsOpened()){
     ESAT::DrawClear(0, 0, 0);
-    ESAT::DrawClear(0, 0, 0);
-    // single line...
-    ESAT::DrawSetStrokeColor(255, 255, 255);
-    ESAT::DrawLine(0, 0, 640, 480);
     o.update();
     o.draw();
 
