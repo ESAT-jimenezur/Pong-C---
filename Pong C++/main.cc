@@ -7,6 +7,8 @@
 
 #include "object.h"
 #include "paddle.h"
+#include "stars.h"
+
 
 int ESAT::main(int argc, char **argv) {
 
@@ -18,11 +20,23 @@ int ESAT::main(int argc, char **argv) {
   p1.pos_y_ = 514.0f;
   p2.pos_y_ = 514.0f;
   
+  Star stars[1000];
+  for (unsigned int i = 0; i < 1000; ++i){
+    stars[i].init();
+  }
+
   while (ESAT::WindowIsOpened()){
     ESAT::DrawClear(0, 0, 0);
 
+    for (unsigned int i = 0; i < 1000; ++i){
+      stars[i].update();
+    }
     p1.update();
     p2.update();
+
+    for (unsigned int i = 0; i < 1000; ++i){
+      stars[i].draw();
+    }
     p1.draw();
     p2.draw();
 

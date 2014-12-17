@@ -1,5 +1,7 @@
 
 #include "object.h"
+#include <stdlib.h>
+
 
 int Object::object_counter_ = 0;
 
@@ -35,9 +37,16 @@ void Object::init(const char* sprite_name){
   id_ = object_counter_;
   ++object_counter_;
 
-  sprite_ = ESAT::SpriteFromFile(sprite_name);
-  width_ = ESAT::SpriteWidth(sprite_);
-  height_ = ESAT::SpriteHeight(sprite_);
+  if (sprite_name == NULL){
+    width_ = 0.0f;
+    height_ = 0.0f;
+  }
+  else{
+    sprite_ = ESAT::SpriteFromFile(sprite_name);
+    width_ = ESAT::SpriteWidth(sprite_);
+    height_ = ESAT::SpriteHeight(sprite_);
+  }
+
 }
 
 void Object::update(){
@@ -56,6 +65,8 @@ void Object::draw(){
     ESAT::DrawSprite(sprite_, pos_x_, pos_y_);
   }
 }
+
+
 
 bool Object::isColliding(const Object& other){
   if(collisionable_ && other.collisionable_){

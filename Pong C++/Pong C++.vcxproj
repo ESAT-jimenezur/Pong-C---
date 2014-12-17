@@ -82,11 +82,13 @@
   <ItemGroup>
     <ClInclude Include="object.h" />
     <ClInclude Include="paddle.h" />
+    <ClInclude Include="stars.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cc" />
     <ClCompile Include="object.cc" />
     <ClCompile Include="paddle.cc" />
+    <ClCompile Include="stars.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
