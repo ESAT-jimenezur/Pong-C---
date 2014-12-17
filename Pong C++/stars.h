@@ -18,4 +18,17 @@ public:
   void draw();
 };
 
+class PLine : public Object{
+public:
+  float red_decrease_;
+  float red_;
+
+  PLine();
+  ~PLine(){};
+
+  void init();
+  void update();
+  void draw();
+};
+
 #endif __STARS_H__
